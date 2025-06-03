@@ -39,4 +39,4 @@ Forwarding:
 https://8074-2400-adc7-15b-c000-7cfa-aa8a-839a-9a2b.ngrok-free.app/webhook/orders-create
 Ngrok public ip:
 https://8074-2400-adc7-15b-c000-7cfa-aa8a-839a-9a2b.ngrok-free.app
-
+http://127.0.0.1:4040/inspect/http
