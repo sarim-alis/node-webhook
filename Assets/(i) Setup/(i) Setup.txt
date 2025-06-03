@@ -1,0 +1,42 @@
+(i)
+(Setup)
+npm init -y
+npm install express body-parser
+npm install --save-dev nodemon
+npm run dev
+
+
+(ii)
+(index.js)
+const express = require('express');
+
+const bodyParser = require('body-parser');
+
+const app = express();
+
+const PORT = 3000;
+
+app.use(bodyParser.json());
+
+
+app.post('/webhook/orders-create', (req, res) => {
+    const orderData = req.body;
+    console.log("Order data received:", orderData);
+    res.status(200).send('Webhook received successfully');
+})
+
+
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+})
+
+
+(iii)
+(ngrok)
+ngrok http 3000
+Forwarding:
+https://8074-2400-adc7-15b-c000-7cfa-aa8a-839a-9a2b.ngrok-free.app/webhook/orders-create
+Ngrok public ip:
+https://8074-2400-adc7-15b-c000-7cfa-aa8a-839a-9a2b.ngrok-free.app
+
